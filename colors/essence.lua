@@ -5,49 +5,56 @@ local badge = colors.badge
 
 util.init()
 
-local highlights = {
-    Normal = { fg = palette.fg_1, bg = palette.NONE },
-    Identifier = 'Normal',
-    Function = 'Normal',
-    Keyword = 'Normal',
-    Operator = 'Normal',
-    Type = 'Normal',
-    Variable = 'Normal',
-    ['@constructor'] = 'Normal',
-    ['@type.builtin'] = 'Normal',
-    ['@variable.builtin'] = 'Normal',
+util.hi('Normal', { fg = palette.fg_1, bg = palette.NONE }, {
+    'Function',
+    'Delimiter',
+    'Identifier',
+    'Keyword',
+    'Operator',
+    'Special',
+    'Type',
+    'Variable',
+    '@constructor',
+    '@punctuation.delimiter',
+    '@type',
+    '@type.builtin',
+    '@variable',
+    '@variable.builtin'
+})
 
-    Comment = { fg = palette.green },
-    ['@comment.documentation'] = { fg = palette.green, bold = true },
-    SpecialComment = badge.green,
-    ['@lsp.typemod.keyword.documentation'] = 'SpecialComment',
-    ['@lsp.typemod.parameter.documentation'] = 'SpecialComment',
+util.hi('Comment', { fg = palette.green })
+util.hi('@comment.documentation', { fg = palette.green, bold = true })
+util.hi('SpecialComment', badge.green, {
+    '@lsp.typemod.keyword.documentation',
+    '@lsp.typemod.parameter.documentation'
+})
 
-    Constant = { fg = palette.yellow },
-    String = 'Constant',
-    ['@string.escape'] = badge.yellow,
+util.hi('Constant', { fg = palette.yellow }, {
+    'String',
+    '@string.escape'
+})
 
-    Declaration = { fg = palette.orange },
-    ['@lsp.mod.declaration'] = 'Declaration',
+util.hi('Declaration', { fg = palette.orange }, {
+    '@lsp.mod.declaration'
+})
 
-    Mutable = { underline = true },
+util.hi('Mutable', { sp = palette.orange, underline = true })
 
-    Visual = badge.blue,
+util.hi('Visual', badge.blue)
 
-    Ignore = { fg = palette.dim_0 },
-    Conceal = 'Ignore',
-    NonText = 'Ignore',
-    EndOfBuffer = 'Ignore',
-    DiagnosticUnnecessary = 'Ignore',
-    LspCodeLens = 'Ignore',
-    LspCodeLensSeparator = 'Ignore',
-    LspInlayHint = 'Ignore',
+util.hi('Ignore', { fg = palette.dim_0 }, {
+    'Conceal',
+    'NonText',
+    'EndOfBuffer',
+    'DiagnosticUnnecessary',
+    'LspCodeLens',
+    'LspCodeLensSeparator',
+    'LspInlayHint'
+})
 
-    LspReferenceText = badge.yellow,
-    LspReferenceRead = badge.orange,
-    LspReferenceWrite = badge.orange,
-}
-util.apply(highlights)
+util.hi('LspReferenceText', badge.yellow)
+util.hi('LspReferenceRead', badge.orange)
+util.hi('LspReferenceWrite', badge.orange)
 
 local augroup = vim.api.nvim_create_augroup('LspTokenUpdateForMutability', { clear = true })
 util.create_mutability_autocommand(augroup, '*.java', 'property')

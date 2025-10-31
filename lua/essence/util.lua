@@ -6,14 +6,15 @@ function This.init()
     vim.cmd([[if exists("g:syntax_on") | syntax reset | endif]])
 end
 
-function This.apply(highlights)
-    local all_groups = vim.fn.getcompletion('', 'highlight')
-    all_groups['Normal'] = nil
-    for group, color in pairs(highlights) do
-        if type(color) == 'string' then
-            vim.api.nvim_set_hl(0, group, { link = color })
-        else
-            vim.api.nvim_set_hl(0, group, color)
+function This.hi(group, color, links)
+    if type(color) == 'string' then
+        vim.api.nvim_set_hl(0, group, { link = color })
+    else
+        vim.api.nvim_set_hl(0, group, color)
+    end
+    if links then
+        for _, link in ipairs(links) do
+            vim.api.nvim_set_hl(0, link, { link = group })
         end
     end
 end
