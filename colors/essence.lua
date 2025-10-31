@@ -1,16 +1,26 @@
 local util = require('essence.util')
 local colors = require('essence.colors')
 local palette = colors.palette
-local mappings = colors.mappings
+local badge = colors.badge
 
 util.init()
 
 local highlights = {
-    Normal = { fg = '#ffff00', bg = colors.NONE },
-    Mutable = { bg = colors.highlighted_background, underline = true, special = colors.info },
-    Comment = { fg = '#ff0000' },
-    Identifier = { fg = '#00ff00', bg = '#0000ff' },
-    Statement = 'Identifier',
+    Normal = { fg = palette.fg_1, bg = palette.NONE },
+
+    Comment = { fg = palette.green },
+    ['@comment'] = 'Comment',
+
+    Constant = { fg = palette.yellow },
+    ['@boolean'] = 'Constant',
+    ['@number'] = 'Constant',
+    ['@string'] = 'Constant',
+    ['@string.escape'] = badge.yellow,
+
+    Declaration = { fg = palette.violet },
+    ['@lsp.mod.declaration'] = 'Declaration',
+
+    Mutable = { underline = true }
 }
 util.apply(highlights)
 

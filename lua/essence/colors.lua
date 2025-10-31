@@ -40,31 +40,4 @@ This.badge = {
     white   = { fg = This.palette.fg_1, bg = This.palette.bg_2 }
 }
 
-This.mappings = {
-    -- Syntax elements
-    normal = This.palette.fg_1,
-
-    -- UI elements
-    background = This.palette.bg_0,
-    ui_dim_background = This.palette.bg_1,
-    ui_background = This.palette.bg_2,
-    visual = This.palette.dim_0,
-    cursor = This.palette.fg_1,
-    lens = This.palette.blue,
-    ui_text = This.palette.fg_1,
-    ui_dim_text = This.palette.dim_0,
-    ui_widget = This.palette.green,
-    ui_highlight = This.palette.violet,
-    ui_extra_highlight = This.palette.cyan,
-
-    -- Status elements
-    error = This.palette.red,
-    warning = This.palette.magenta,
-    info = This.palette.cyan,
-    hint = This.palette.fg_1,
-    added = This.palette.green,
-    changed = This.palette.yellow,
-    deleted = This.palette.red
-}
-
 return This

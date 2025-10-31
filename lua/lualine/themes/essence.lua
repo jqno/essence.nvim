@@ -1,34 +1,34 @@
-local colors = require('essence.colors').mappings
+local colors = require('essence.colors').palette
 
 return {
     normal = {
-        a = { bg = colors.ui_widget, fg = colors.ui_dim_background, gui = 'bold' },
-        b = { bg = colors.identifier, fg = colors.ui_dim_background },
-        c = { bg = colors.ui_background, fg = colors.identifier },
+        a = { bg = colors.green, fg = colors.bg_1, gui = 'bold' },
+        b = { bg = colors.fg_1, fg = colors.bg_1 },
+        c = { bg = colors.bg_2, fg = colors.fg_1 },
     },
     insert = {
-        a = { bg = colors.literal, fg = colors.ui_dim_background, gui = 'bold' },
-        b = { bg = colors.identifier, fg = colors.ui_dim_background },
-        c = { bg = colors.ui_background, fg = colors.identifier },
+        a = { bg = colors.fg_1, fg = colors.bg_1, gui = 'bold' },
+        b = { bg = colors.fg_1, fg = colors.bg_1 },
+        c = { bg = colors.bg_2, fg = colors.fg_1 },
     },
     visual = {
-        a = { bg = colors.visual, fg = colors.ui_dim_background, gui = 'bold' },
-        b = { bg = colors.identifier, fg = colors.ui_dim_background },
-        c = { bg = colors.ui_background, fg = colors.identifier },
+        a = { bg = colors.blue, fg = colors.bg_1, gui = 'bold' },
+        b = { bg = colors.fg_1, fg = colors.bg_1 },
+        c = { bg = colors.bg_2, fg = colors.fg_1 },
     },
     replace = {
-        a = { bg = colors.operator, fg = colors.ui_dim_background, gui = 'bold' },
-        b = { bg = colors.identifier, fg = colors.ui_dim_background },
-        c = { bg = colors.ui_background, fg = colors.identifier },
+        a = { bg = colors.orange, fg = colors.bg_1, gui = 'bold' },
+        b = { bg = colors.fg_1, fg = colors.bg_1 },
+        c = { bg = colors.bg_2, fg = colors.fg_1 },
     },
     command = {
-        a = { bg = colors.warning, fg = colors.ui_dim_background, gui = 'bold' },
-        b = { bg = colors.identifier, fg = colors.ui_dim_background },
-        c = { bg = colors.ui_background, fg = colors.identifier },
+        a = { bg = colors.magenta, fg = colors.bg_1, gui = 'bold' },
+        b = { bg = colors.fg_1, fg = colors.bg_1 },
+        c = { bg = colors.bg_2, fg = colors.fg_1 },
     },
     inactive = {
-        a = { bg = colors.identifier, fg = colors.ui_dim_background, gui = 'bold' },
-        b = { bg = colors.identifier, fg = colors.ui_dim_background },
-        c = { bg = colors.ui_background, fg = colors.identifier },
+        a = { bg = colors.fg_1, fg = colors.bg_1, gui = 'bold' },
+        b = { bg = colors.fg_1, fg = colors.bg_1 },
+        c = { bg = colors.bg_2, fg = colors.fg_1 },
     }
 }
