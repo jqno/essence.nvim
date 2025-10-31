@@ -7,20 +7,45 @@ util.init()
 
 local highlights = {
     Normal = { fg = palette.fg_1, bg = palette.NONE },
+    Identifier = 'Normal',
+    Function = 'Normal',
+    Keyword = 'Normal',
+    Operator = 'Normal',
+    Type = 'Normal',
+    Variable = 'Normal',
+    ['@constructor'] = 'Normal',
+    ['@type.builtin'] = 'Normal',
+    ['@variable.builtin'] = 'Normal',
 
     Comment = { fg = palette.green },
-    ['@comment'] = 'Comment',
+    ['@comment.documentation'] = { fg = palette.green, bold = true },
+    SpecialComment = badge.green,
+    ['@lsp.typemod.keyword.documentation'] = 'SpecialComment',
+    ['@lsp.typemod.parameter.documentation'] = 'SpecialComment',
 
     Constant = { fg = palette.yellow },
-    ['@boolean'] = 'Constant',
-    ['@number'] = 'Constant',
-    ['@string'] = 'Constant',
+    String = 'Constant',
     ['@string.escape'] = badge.yellow,
 
-    Declaration = { fg = palette.violet },
+    Declaration = { fg = palette.orange },
     ['@lsp.mod.declaration'] = 'Declaration',
 
-    Mutable = { underline = true }
+    Mutable = { underline = true },
+
+    Visual = badge.blue,
+
+    Ignore = { fg = palette.dim_0 },
+    Conceal = 'Ignore',
+    NonText = 'Ignore',
+    EndOfBuffer = 'Ignore',
+    DiagnosticUnnecessary = 'Ignore',
+    LspCodeLens = 'Ignore',
+    LspCodeLensSeparator = 'Ignore',
+    LspInlayHint = 'Ignore',
+
+    LspReferenceText = badge.yellow,
+    LspReferenceRead = badge.orange,
+    LspReferenceWrite = badge.orange,
 }
 util.apply(highlights)
 
