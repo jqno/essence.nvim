@@ -39,6 +39,7 @@ util.hi('Constant', { fg = palette.yellow }, {
     'String',
     '@string.escape'
 })
+util.hi('@string.special.url', { fg = palette.blue })
 
 
 -- Variables
@@ -65,7 +66,13 @@ util.hi('Ignore', { fg = palette.dim_0 }, {
 
 
 -- Visual and other highlights
-util.hi('Visual', badge.blue)
+util.hi('Visual', { bg = palette.bg_blue })
+util.hi('IncSearch', badge.blue, {
+    'CurSearch'
+})
+util.hi('Search', badge.cyan, {
+    'MatchParen'
+})
 util.hi('LspReferenceText', badge.yellow)
-util.hi('LspReferenceRead', badge.orange)
-util.hi('LspReferenceWrite', badge.orange)
+util.hi('LspReferenceRead', badge.cyan)
+util.hi('LspReferenceWrite', badge.cyan)
