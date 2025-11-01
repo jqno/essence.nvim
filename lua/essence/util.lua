@@ -26,9 +26,6 @@ function This.create_mutability_autocommand(augroup, pattern, ...)
         group = augroup,
         pattern = { pattern },
         callback = function(args)
-            if not vim.diagnostic.config().underline then
-                return
-            end
             local token = args.data.token
             for _, type in ipairs(types) do
                 if token.type == type and not token.modifiers.readonly then
