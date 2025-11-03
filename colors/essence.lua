@@ -12,6 +12,7 @@ util.hi('Normal', { fg = palette.fg_1, bg = palette.NONE }, {
     'Delimiter',
     'Identifier',
     'Keyword',
+    'NormalFloat',
     'Operator',
     'Special',
     'Type',
@@ -21,8 +22,12 @@ util.hi('Normal', { fg = palette.fg_1, bg = palette.NONE }, {
     '@type',
     '@type.builtin',
     '@variable',
-    '@variable.builtin'
+    '@variable.builtin',
+    '@lsp.type.enumMember'
 })
+util.hi('Title', { fg = palette.orange })
+util.hi('Underlined', { underline = true })
+util.hi('_Link', { fg = palette.blue })
 
 
 -- Comments
@@ -42,7 +47,7 @@ util.hi('Constant', { fg = palette.yellow }, {
     'String',
 })
 util.hi('@string.escape', badge.yellow)
-util.hi('@string.special.url', { fg = palette.blue })
+util.hi('@string.special.url', '_Link')
 
 
 -- Variables
@@ -81,6 +86,38 @@ util.hi('Search', badge.cyan, {
 util.hi('LspReferenceText', badge.yellow)
 util.hi('LspReferenceRead', badge.cyan)
 util.hi('LspReferenceWrite', badge.cyan)
+
+
+-- Cursor
+util.hi('Cursor', { bg = palette.fg_1 }, {
+    'lCursor',
+    'CursorIM',
+    'TermCursor'
+})
+util.hi('CursorLine', { bg = palette.dim_0 }, {
+    'CursorColumn',
+})
+
+
+-- GUI elements
+util.hi('ColorColumn', { bg = palette.fg_0 })
+util.hi('SignColumn', { fg = palette.dim_0, bg = palette.NONE })
+util.hi('LineNr', { fg = palette.dim_0 })
+util.hi('CursorLineNr', { fg = palette.green })
+util.hi('FloatBorder', { fg = palette.green, bg = palette.NONE }, {
+    'FloatTitle',
+    'FloatFooter'
+})
+
+
+-- Messages
+util.hi('ErrorMsg', { fg = palette.red })
+util.hi('WarningMsg', { fg = palette.magenta })
+util.hi('MsgArea', 'Normal', {
+    'ModeMsg',
+    'MoreMsg',
+    'Question'
+})
 
 
 -- Diagnostics
@@ -140,6 +177,22 @@ util.hi('Removed', { fg = palette.red }, {
     'diffOldFile',
     '@diff.minus'
 })
+
+
+-- Markdown
+util.hi('@markup', 'Normal', {
+    '@markup.link'
+})
+util.hi('@markup.heading', 'Title')
+util.hi('@markup.italic', { italic = true })
+util.hi('@markup.link.url', '_Link')
+util.hi('@markup.strong', { bold = true })
+util.hi('@markup.strikethrough', { strikethrough = true })
+util.hi('@markup.raw', badge.white, {
+    '@markup.math'
+})
+util.hi('@markup.underline', 'Underline')
+util.hi('@label.markdown', 'Constant')
 
 
 -- plugin: GitSigns
