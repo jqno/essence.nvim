@@ -91,6 +91,7 @@ util.hi('Error', badge.red, {
     'DiagnosticFloatingError',
     'DiagnosticVirtualTextError',
     'healthError',
+    'gitcommitOverflow'
 })
 util.hi('DiagnosticSignError', { fg = palette.red })
 util.hi('_Warning', badge.magenta, {
@@ -99,7 +100,7 @@ util.hi('_Warning', badge.magenta, {
     'DiagnosticUnderlineWarn',
     'DiagnosticSignWarn',
     'DiagnosticVirtualTextWarn',
-    'healthWarning',
+    'healthWarning'
 })
 util.hi('DiagnosticSignWarn', { fg = palette.magenta })
 util.hi('_Info', { bg = palette.bg_2 }, {
@@ -107,13 +108,41 @@ util.hi('_Info', { bg = palette.bg_2 }, {
     'DiagnosticUnderlineInfo',
     'DiagnosticFloatingInfo',
     'DiagnosticVirtualTextInfo',
-    'healthSuccess',
+    'healthSuccess'
 })
 util.hi('DiagnosticSignHint', { fg = palette.fg_0 })
 util.hi('_Hint', { bg = palette.bg_2 }, {
     'DiagnosticHint',
     'DiagnosticUnderlineHint',
     'DiagnosticFloatingHint',
-    'DiagnosticVirtualTextHint',
+    'DiagnosticVirtualTextHint'
 })
 util.hi('DiagnosticSignHint', { fg = palette.fg_0 })
+
+
+-- Diffs
+util.hi('DiffText', 'Normal')
+util.hi('Added', { fg = palette.green }, {
+    'DiffAdd',
+    'diffAdded',
+    'diffNewFile',
+    '@diff.plus'
+})
+util.hi('Changed', { fg = palette.yellow }, {
+    'DiffChange',
+    'diffChanged',
+    'diffLine',
+    '@diff.delta'
+})
+util.hi('Removed', { fg = palette.red }, {
+    'DiffDelete',
+    'diffRemoved',
+    'diffOldFile',
+    '@diff.minus'
+})
+
+
+-- plugin: GitSigns
+util.hi('GitSignsAdd', 'Added')
+util.hi('GitSignsChange', 'DiffChange')
+util.hi('GitSignsDelete', 'Removed')
