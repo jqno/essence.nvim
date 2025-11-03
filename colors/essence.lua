@@ -27,11 +27,12 @@ util.hi('Normal', { fg = palette.fg_1, bg = palette.NONE }, {
 
 -- Comments
 util.hi('Comment', { fg = palette.green })
-util.hi('@comment.documentation', { fg = palette.green, bold = true })
-util.hi('SpecialComment', badge.green, {
+util.hi('@comment.documentation', { fg = palette.green, bold = true }, {
+    'SpecialComment',
     '@lsp.typemod.class.documentation',
     '@lsp.typemod.interface.documentation',
     '@lsp.typemod.keyword.documentation',
+    '@lsp.typemod.method.documentation',
     '@lsp.typemod.parameter.documentation'
 })
 
@@ -39,8 +40,8 @@ util.hi('SpecialComment', badge.green, {
 -- Literals
 util.hi('Constant', { fg = palette.yellow }, {
     'String',
-    '@string.escape'
 })
+util.hi('@string.escape', badge.yellow)
 util.hi('@string.special.url', { fg = palette.blue })
 
 
@@ -88,31 +89,31 @@ util.hi('Error', badge.red, {
     'DiagnosticError',
     'DiagnosticUnderlineError',
     'DiagnosticFloatingError',
-    'DiagnosticSignError',
     'DiagnosticVirtualTextError',
     'healthError',
 })
+util.hi('DiagnosticSignError', { fg = palette.red })
 util.hi('_Warning', badge.magenta, {
     'Todo',
     'DiagnosticWarn',
     'DiagnosticUnderlineWarn',
-    'DiagnosticFloatingWarn',
     'DiagnosticSignWarn',
     'DiagnosticVirtualTextWarn',
     'healthWarning',
 })
+util.hi('DiagnosticSignWarn', { fg = palette.magenta })
 util.hi('_Info', { bg = palette.bg_2 }, {
     'DiagnosticInfo',
     'DiagnosticUnderlineInfo',
     'DiagnosticFloatingInfo',
-    'DiagnosticSignInfo',
     'DiagnosticVirtualTextInfo',
     'healthSuccess',
 })
+util.hi('DiagnosticSignHint', { fg = palette.fg_0 })
 util.hi('_Hint', { bg = palette.bg_2 }, {
     'DiagnosticHint',
     'DiagnosticUnderlineHint',
     'DiagnosticFloatingHint',
-    'DiagnosticSignHint',
     'DiagnosticVirtualTextHint',
 })
+util.hi('DiagnosticSignHint', { fg = palette.fg_0 })
