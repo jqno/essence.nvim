@@ -34,11 +34,6 @@ util.hi('_Link', { fg = palette.blue })
 util.hi('Comment', { fg = palette.green })
 util.hi('@comment.documentation', { fg = palette.green, bold = true }, {
     'SpecialComment',
-    '@lsp.typemod.class.documentation',
-    '@lsp.typemod.interface.documentation',
-    '@lsp.typemod.keyword.documentation',
-    '@lsp.typemod.method.documentation',
-    '@lsp.typemod.parameter.documentation'
 })
 util.hi('@lsp.type.comment', {}) -- needed to properly display treesitter TODO comment highlights; see https://www.reddit.com/r/neovim/comments/14ecf5o/semantic_highlights_messing_with_todo_comments/
 
