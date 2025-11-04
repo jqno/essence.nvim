@@ -8,17 +8,26 @@ util.init()
 
 -- Normal text
 util.hi('Normal', { fg = palette.fg_1, bg = palette.NONE }, {
-    'Function',
+    'Conditional',
     'Delimiter',
+    'Exception',
+    'Function',
     'Identifier',
     'Keyword',
+    'Label',
     'NormalFloat',
     'Operator',
+    'PreProc',
+    'Repeat',
     'Special',
+    'Statement',
     'Type',
     'Variable',
     '@constructor',
+    '@function',
+    '@function.builtin',
     '@punctuation.delimiter',
+    '@punctuation.special',
     '@type',
     '@type.builtin',
     '@variable',
@@ -27,7 +36,9 @@ util.hi('Normal', { fg = palette.fg_1, bg = palette.NONE }, {
 })
 util.hi('Title', { fg = palette.orange })
 util.hi('Underlined', { underline = true })
-util.hi('_Link', { fg = palette.blue })
+util.hi('_Link', { fg = palette.blue }, {
+    'Tag'
+})
 
 
 -- Comments
@@ -40,9 +51,20 @@ util.hi('@lsp.type.comment', {}) -- needed to properly display treesitter TODO c
 
 -- Literals
 util.hi('Constant', { fg = palette.yellow }, {
+    'Directory',
+    'Boolean',
+    'Character',
+    'Float',
+    'Number',
     'String',
+    '@constant',
+    '@constant.builtin'
 })
-util.hi('@string.escape', badge.yellow)
+util.hi('Special', badge.yellow, {
+    'SpecialChar',
+    '@string.escape',
+    'Debug'
+})
 util.hi('@string.special.url', '_Link')
 
 
@@ -129,6 +151,7 @@ util.hi('MsgArea', 'Normal', {
 -- Diagnostics
 util.hi('Error', badge.red, {
     '@error',
+    'SpellBad',
     'DiagnosticError',
     'DiagnosticUnderlineError',
     'DiagnosticFloatingError',
@@ -155,12 +178,18 @@ util.hi('_Info', { bg = palette.bg_2 }, {
 })
 util.hi('DiagnosticSignHint', { fg = palette.fg_0 })
 util.hi('_Hint', { bg = palette.bg_2 }, {
+    'SpellCap',
+    'SpellLocal',
+    'SpellRare',
     'DiagnosticHint',
     'DiagnosticUnderlineHint',
     'DiagnosticFloatingHint',
     'DiagnosticVirtualTextHint'
 })
 util.hi('DiagnosticSignHint', { fg = palette.fg_0 })
+util.hi('_OK', badge.green, {
+    'DiagnosticOk'
+})
 
 
 -- Diffs
